@@ -9,7 +9,7 @@ const signupSchema = z.object({
   gender: z.enum(['male', 'female', 'non-binary']),
   lookingFor: z.enum(['male', 'female', 'any']),
   city: z.string().min(2),
-  answers: z.record(z.any())
+  answers: z.record(z.string(), z.any())
 });
 
 export async function POST(request: NextRequest) {
